@@ -10,9 +10,9 @@ $ chmod +x test.sh
 ```
 3. Executar os testes de forma automática com:
 ```
-$ ./test.sh
+$ ./test.sh <FLAGS>
 ```
-## Utilização:
-* `-b <Caminho-para-o-executável>`: Definir o executável a testar, em caso de omição da flag o default é 'a.out'.
-* `-t <Caminho-para-a-diretoria-dos-testes>`: Definir os testes, em caso de omição da flag o default é 'tests'.
+## Flags:
+* `-b <CAMINHO-PARA-EXECUTAVEL>`: Definir o executável a testar, em caso de omição da flag o default é 'a.out'.
+* `-t <CAMINHO-PARA-TESTES>`: Definir os testes, em caso de omição da flag o default é a diretoria 'tests'.
 * `-h`: Mostrar utilização.
