@@ -4,11 +4,7 @@
 ```
 $ git clone https://github.com/joaotgouveia/iaed_proj2_tester.git
 ```
-2. Tornar o ficheiro test.sh executável com:
-```
-$ chmod +x test.sh
-```
-3. Executar os testes de forma automática com:
+2. Executar os testes de forma automática com:
 ```
 $ ./test.sh <FLAGS>
 ```
