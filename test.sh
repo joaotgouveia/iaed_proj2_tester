@@ -2,11 +2,12 @@
 # test.sh - Simple testing script for projects
 
 # Defining colors
-BOLD=$(tput bold)
 RES=$(tput sgr0)
-FAILED="${BOLD}$(tput setaf 1)failed$RES" # Bold red
-PASSED="${BOLD}$(tput setaf 2)passed$RES" # Bold green
-ERROR="${BOLD}$(tput setaf 1)Erro: a flag '$1' nao existe.$RES"
+RED=$(tput setaf 1)$(tput bold)
+GREEN=$(tput setaf 2)$(tput bold)
+FAILED="${RED}failed$RES"
+PASSED="${GREEN}passed$RES"
+ERROR="${RED}Erro: a flag '$1' nao existe.$RES"
 
 # Show usage
 help() {
@@ -16,6 +17,11 @@ help() {
 	printf "\t%s\n" "-t <Caminho-para-a-diretoria-dos-testes>: Definir os testes, em caso de omicao da flag o default eh 'tests'."
 	printf "\t%s\n" "-h: Mostrar utilizacao."
 	exit 0
+}
+
+fileError() {
+	printf "%s\n" "${RED}Erro: $1 nao encontrado.$RES"
+	exit 1
 }
 
 # Check for flags
@@ -31,6 +37,10 @@ done
 # Default values if a flag is not provided
 [ "$BIN" = "" ] && BIN="a.out"
 [ "$TESTDIR" = "" ] && TESTDIR="tests"
+
+# Checking if files exist
+{ test -e "$BIN" && test -f "$BIN"; } || fileError "$BIN"
+{ test -e "$TESTDIR" && test -d "$TESTDIR"; } || fileError "$TESTDIR"
 
 # Getting tests from the test directory
 TESTS=$(ls "$TESTDIR"/*.in)
