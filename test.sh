@@ -11,7 +11,7 @@ ERROR="${BOLD}$(tput setaf 1)Erro: a flag '$1' nao existe.$RES"
 # Show usage
 help() {
 	[ "$1" = "" ] || printf "\t%s\n" "$ERROR"
-	printf "\t%s\n" "Utilizacao:"
+	printf "\t%s\n" "Flags:"
 	printf "\t%s\n" "-b <Caminho-para-o-executavel>: Definir o executavel a testar, em caso de omicao da flag o default eh 'a.out'."
 	printf "\t%s\n" "-t <Caminho-para-a-diretoria-dos-testes>: Definir os testes, em caso de omicao da flag o default eh 'tests'."
 	printf "\t%s\n" "-h: Mostrar utilizacao."
