@@ -13,6 +13,6 @@ $ chmod +x test.sh
 $ ./test.sh
 ```
 ## Utilização:
-* `-b <Caminho-para-o-executável>`: Definir o executável a testar, em caso de omição da flag o default é "a.out".
-* `-t <Caminho-para-a-diretoria-dos-testes>`: Definir os testes, em caso de omição da flag o default é "tests".
+* `-b <Caminho-para-o-executável>`: Definir o executável a testar, em caso de omição da flag o default é 'a.out'.
+* `-t <Caminho-para-a-diretoria-dos-testes>`: Definir os testes, em caso de omição da flag o default é 'tests'.
 * `-h`: Mostrar utilização.
