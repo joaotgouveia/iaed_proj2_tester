@@ -35,8 +35,8 @@ while getopts :b:t:h FLAG; do
 done
 
 # Default values if a flag is not provided
-[ "$BIN" = "" ] && BIN="$(pwd)/a.out"
-[ "$TESTDIR" = "" ] && TESTDIR="$(pwd)/tests"
+[ "$BIN" = "" ] && BIN="$PWD/a.out"
+[ "$TESTDIR" = "" ] && TESTDIR="$PWD/tests"
 
 # Checking if files exist
 { test -e "$BIN" && test -f "$BIN"; } || fileError "$BIN"
