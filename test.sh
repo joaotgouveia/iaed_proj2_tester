@@ -35,8 +35,8 @@ while getopts :b:t:h FLAG; do
 done
 
 # Default values if a flag is not provided
-[ "$BIN" = "" ] && BIN="a.out"
-[ "$TESTDIR" = "" ] && TESTDIR="tests"
+[ "$BIN" = "" ] && BIN="$(pwd)/a.out"
+[ "$TESTDIR" = "" ] && TESTDIR="$(pwd)/tests"
 
 # Checking if files exist
 { test -e "$BIN" && test -f "$BIN"; } || fileError "$BIN"
@@ -45,14 +45,14 @@ done
 # Getting tests from the test directory
 TESTS=$(ls "$TESTDIR"/*.in)
 
-# Creating MyOutput directory if it doestn exist
+# Creating MyOutput directory if it doesn't exist
 { test -e MyOutput && test -d MyOutput; } || mkdir MyOutput
 
 # Executing all tests
 for TEST in $TESTS; do
 	TESTNAME=${TEST%.in}
-	MYOUT=MyOutput/"${TESTNAME#tests/}".myout
+	TESTNUM="${TESTNAME#${TESTDIR}/}"
+	MYOUT=MyOutput/"${TESTNUM}".myout
 	./"$BIN" < "$TEST" > "$MYOUT"
-	TESTNUM="${TESTNAME#tests/}"
 	{ diff "$MYOUT" "${TESTNAME}".out > /dev/null && echo "$TESTNUM $PASSED"; } || echo "$TESTNUM $FAILED"
 done
