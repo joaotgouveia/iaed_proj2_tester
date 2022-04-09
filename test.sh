@@ -51,7 +51,7 @@ TESTS=$(ls "$TESTDIR"/*.in)
 # Executing all tests
 for TEST in $TESTS; do
 	TESTNAME=${TEST%.in}
-	TESTNUM="${TESTNAME#${TESTDIR}/}"
+	TESTNUM="${TESTNAME#"$TESTDIR"/}"
 	MYOUT=MyOutput/"${TESTNUM}".myout
 	./"$BIN" < "$TEST" > "$MYOUT"
 	{ diff "$MYOUT" "${TESTNAME}".out > /dev/null && echo "$TESTNUM $PASSED"; } || echo "$TESTNUM $FAILED"
