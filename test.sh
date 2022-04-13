@@ -19,6 +19,7 @@ help() {
 	exit 0
 }
 
+# File not found
 fileError() {
 	printf "%s\n" "${RED}Erro: $1 nao encontrado.$RES"
 	exit 1
@@ -35,8 +36,8 @@ while getopts :b:t:h FLAG; do
 done
 
 # Default values if a flag is not provided
-[ "$BIN" = "" ] && BIN="$PWD/a.out"
-[ "$TESTDIR" = "" ] && TESTDIR="$PWD/tests"
+[ "$BIN" = "" ] && BIN="a.out"
+[ "$TESTDIR" = "" ] && TESTDIR="tests"
 
 # Checking if files exist
 { test -e "$BIN" && test -f "$BIN"; } || fileError "$BIN"
