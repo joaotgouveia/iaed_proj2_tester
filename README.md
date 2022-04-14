@@ -1,12 +1,16 @@
 # Testes para o segundo projeto da cadeira IAED
 ## Setup:
-1. Clonar este repo com:
+* Clonar este repo com:
 ```
 $ git clone https://github.com/joaotgouveia/iaed_proj2_tester.git
 ```
-2. Executar os testes de forma automática com:
+* Executar os testes de forma automática com:
 ```
 $ ./test.sh <FLAGS>
+```
+* Procurar por memory leaks de forma automática com:
+```
+$ ./memcheck.sh <FLAGS>
 ```
 ## Flags:
 * `-b <CAMINHO-PARA-EXECUTAVEL>`: Definir o executável a testar, em caso de omição da flag o default é 'a.out'.
