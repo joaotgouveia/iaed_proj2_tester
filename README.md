@@ -1,14 +1,14 @@
 # Testes para o segundo projeto da cadeira IAED
 ## Setup:
-* Clonar este repo com:
+1. Clonar este repo com:
 ```
 $ git clone https://github.com/joaotgouveia/iaed_proj2_tester.git
 ```
-* Executar os testes de forma automática com:
+2. Executar os testes de forma automática com:
 ```
 $ ./test.sh <FLAGS>
 ```
-* Procurar por memory leaks de forma automática com:
+3. Procurar por memory leaks de forma automática com:
 ```
 $ ./memcheck.sh <FLAGS>
 ```
