@@ -14,7 +14,7 @@ help() {
 	[ "$1" = "" ] || printf "\t%s\n" "$ERROR"
 	printf "\t%s\n" "Flags:"
 	printf "\t%s\n" "-b <Caminho-para-o-executavel>: Definir o executavel a testar, em caso de omicao da flag o default eh 'a.out'."
-	printf "\t%s\n" "-t <Caminho-para-a-diretoria-dos-testes>: Definir os testes, em caso de omicao da flag o default eh 'tests'."
+	printf "\t%s\n" "-t <Caminho-para-a-diretoria-dos-testes>: Definir os testes, em caso de omicao da flag o default eh 'public'."
 	printf "\t%s\n" "-h: Mostrar utilizacao."
 	exit 0
 }
@@ -37,7 +37,7 @@ done
 
 # Default values if a flag is not provided
 [ "$BIN" = "" ] && BIN="a.out"
-[ "$TESTDIR" = "" ] && TESTDIR="tests"
+[ "$TESTDIR" = "" ] && TESTDIR="public"
 
 # Checking if files exist
 { test -e "$BIN" && test -f "$BIN"; } || fileError "$BIN"

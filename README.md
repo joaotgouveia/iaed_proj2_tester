@@ -14,7 +14,7 @@ $ ./memcheck.sh <FLAGS>
 ```
 ## Flags:
 * `-b <CAMINHO-PARA-EXECUTAVEL>`: Definir o executável a testar, em caso de omição da flag o default é 'a.out'.
-* `-t <CAMINHO-PARA-TESTES>`: Definir os testes, em caso de omição da flag o default é a diretoria 'tests'.
+* `-t <CAMINHO-PARA-TESTES>`: Definir os testes, em caso de omição da flag o default é a diretoria 'public'.
 * `-h`: Mostrar utilização.
 ## test.sh:
 Testa o programa normalmente. Executa os testes e vê as diferencas entre o output esperado e o fornecido.
