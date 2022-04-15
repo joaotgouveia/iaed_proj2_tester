@@ -1,5 +1,6 @@
 #!/bin/bash
 # test.sh - Simple testing script for projects
+# Author: Joao Gouveia
 
 # Defining colors
 RES=$(tput sgr0)

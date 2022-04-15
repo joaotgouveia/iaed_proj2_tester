@@ -1,5 +1,6 @@
 #!/bin/bash
 # memcheck.sh - Simple script for executing tests with valgrind
+# Author: Joao Gouveia
 
 # Defining colors
 RES=$(tput sgr0)
